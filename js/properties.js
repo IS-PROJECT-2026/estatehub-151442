@@ -81,7 +81,7 @@ function formatPrice(price) {
     }).format(price);
 }
 
-function displayProperties() {
+function displayProperties(propertyList = properties) {
     const container = document.querySelector("#properties-container");
     const propertyCount = document.querySelector("#property-count");
 
@@ -89,7 +89,7 @@ function displayProperties() {
         return;
     }
 
-    container.innerHTML = properties.map(property => `
+    container.innerHTML = propertyList.map(property => `
         <article class="property-card">
 
             <img
@@ -129,7 +129,7 @@ function displayProperties() {
     `).join("");
 
     if (propertyCount) {
-        propertyCount.textContent = properties.length;
+        propertyCount.textContent = propertyList.length;
     }
 }
 
@@ -229,3 +229,33 @@ function displayPropertyDetails() {
 }
 
 displayPropertyDetails();
+function setupPropertySearch() {
+    const searchInput = document.querySelector("#property-search");
+    const noResults = document.querySelector("#no-results");
+
+    if (!searchInput) {
+        return;
+    }
+
+    searchInput.addEventListener("input", event => {
+        const searchTerm = event.target.value
+            .trim()
+            .toLowerCase();
+
+        const filteredProperties = properties.filter(property => {
+            return (
+                property.title.toLowerCase().includes(searchTerm) ||
+                property.location.toLowerCase().includes(searchTerm) ||
+                property.type.toLowerCase().includes(searchTerm)
+            );
+        });
+
+        displayProperties(filteredProperties);
+
+        if (noResults) {
+            noResults.hidden = filteredProperties.length !== 0;
+        }
+    });
+}
+
+setupPropertySearch();

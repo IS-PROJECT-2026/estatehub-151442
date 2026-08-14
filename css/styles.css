@@ -751,3 +751,53 @@ body {
         font-size: 2rem;
     }
 }
+/* Property Search */
+
+.property-search {
+    position: relative;
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.property-search input {
+    width: 100%;
+    padding: 16px 50px 16px 20px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 1rem;
+    font-family: inherit;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.property-search input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+
+    transform: translateY(-50%);
+
+    color: #6b7280;
+    font-size: 1.3rem;
+
+    pointer-events: none;
+}
+
+.no-results {
+    padding: 50px 20px;
+    text-align: center;
+
+    color: #6b7280;
+    font-size: 1.1rem;
+}
