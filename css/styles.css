@@ -1,0 +1,151 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styling */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #1f2937;
+}
+
+/* Navigation */
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    min-height: 70px;
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+/* Logo */
+
+.logo {
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #2563eb;
+}
+
+/* Mobile menu button */
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #1f2937;
+}
+
+/* Temporary content */
+
+.placeholder-section {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.placeholder-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.placeholder-section p {
+    font-size: 1.2rem;
+    color: #6b7280;
+}
+
+/* Mobile navigation */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        padding: 0 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 0;
+
+        background-color: #ffffff;
+
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 18px 20px;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .nav-links a:hover {
+        background-color: #f5f7fa;
+    }
+
+    .placeholder-section {
+        margin: 60px auto;
+    }
+
+    .placeholder-section h1 {
+        font-size: 2.2rem;
+    }
+}
