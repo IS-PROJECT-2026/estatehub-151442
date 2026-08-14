@@ -100,26 +100,30 @@ function displayProperties() {
 
             <div class="property-content">
 
-                <span class="property-type">
-                    ${property.type}
-                </span>
+    <span class="property-type">
+        ${property.type}
+    </span>
 
-                <h3>${property.title}</h3>
+    <h3>${property.title}</h3>
 
-                <p class="property-location">
-                    📍 ${property.location}
-                </p>
+    <p class="property-location">
+        📍 ${property.location}
+    </p>
 
-                <div class="property-details">
-                    <span>🛏 ${property.bedrooms} Beds</span>
-                    <span>🛁 ${property.bathrooms} Baths</span>
-                </div>
+    <div class="property-details">
+        <span>🛏 ${property.bedrooms} Beds</span>
+        <span>🛁 ${property.bathrooms} Baths</span>
+    </div>
 
-                <p class="property-price">
-                    ${formatPrice(property.price)}
-                </p>
+    <p class="property-price">
+        ${formatPrice(property.price)}
+    </p>
 
-            </div>
+    <a href="property-details.html?id=${property.id}" class="property-details-btn">
+        View Details
+    </a>
+
+</div>
 
         </article>
     `).join("");
@@ -130,3 +134,98 @@ function displayProperties() {
 }
 
 displayProperties();
+function displayPropertyDetails() {
+    const container = document.querySelector(
+        "#property-details-container"
+    );
+
+    if (!container) {
+        return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+
+    const propertyId = Number(params.get("id"));
+
+    const property = properties.find(
+        item => item.id === propertyId
+    );
+
+    if (!property) {
+        container.innerHTML = `
+            <div class="property-not-found">
+                <h2>Property Not Found</h2>
+                <p>
+                    The property you are looking for does not exist.
+                </p>
+                <a href="properties.html" class="btn btn-primary">
+                    Browse Properties
+                </a>
+            </div>
+        `;
+
+        return;
+    }
+
+    container.innerHTML = `
+        <article class="property-details-layout">
+
+            <div class="property-details-image">
+                <img
+                    src="${property.image}"
+                    alt="${property.title}"
+                >
+            </div>
+
+            <div class="property-details-info">
+
+                <span class="property-type">
+                    ${property.type}
+                </span>
+
+                <h1>${property.title}</h1>
+
+                <p class="property-location">
+                    📍 ${property.location}
+                </p>
+
+                <p class="details-price">
+                    ${formatPrice(property.price)}
+                </p>
+
+                <div class="details-features">
+                    <div>
+                        <strong>${property.bedrooms}</strong>
+                        <span>Bedrooms</span>
+                    </div>
+
+                    <div>
+                        <strong>${property.bathrooms}</strong>
+                        <span>Bathrooms</span>
+                    </div>
+
+                    <div>
+                        <strong>${property.type}</strong>
+                        <span>Property Type</span>
+                    </div>
+                </div>
+
+                <div class="property-description">
+                    <h2>About This Property</h2>
+
+                    <p>
+                        ${property.description}
+                    </p>
+                </div>
+
+                <a href="properties.html" class="btn btn-primary">
+                    Browse More Properties
+                </a>
+
+            </div>
+
+        </article>
+    `;
+}
+
+displayPropertyDetails();
