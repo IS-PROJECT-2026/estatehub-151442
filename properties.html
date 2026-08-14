@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Properties | EstateHub</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                Estate<span>Hub</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="properties.html" class="active">Properties</a>
+                <a href="favourites.html">Favourites</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-header">
+            <div class="page-header-content">
+                <p class="section-tag">EXPLORE PROPERTIES</p>
+
+                <h1>Find Your Next Property</h1>
+
+                <p>
+                    Browse our collection of homes, apartments, land,
+                    and commercial properties available across Kenya.
+                </p>
+            </div>
+        </section>
+
+        <section class="properties-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-tag">AVAILABLE LISTINGS</p>
+                    <h2>Featured Properties</h2>
+                </div>
+
+                <p class="property-count">
+                    Showing <span id="property-count">0</span> properties
+                </p>
+
+            </div>
+
+            <div id="properties-container" class="properties-grid">
+                <!-- Property cards will be generated using JavaScript -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/properties.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
