@@ -237,25 +237,68 @@ function setupPropertySearch() {
         return;
     }
 
-    searchInput.addEventListener("input", event => {
-        const searchTerm = event.target.value
-            .trim()
-            .toLowerCase();
-
-        const filteredProperties = properties.filter(property => {
-            return (
-                property.title.toLowerCase().includes(searchTerm) ||
-                property.location.toLowerCase().includes(searchTerm) ||
-                property.type.toLowerCase().includes(searchTerm)
-            );
-        });
-
-        displayProperties(filteredProperties);
-
-        if (noResults) {
-            noResults.hidden = filteredProperties.length !== 0;
-        }
-    });
+    searchInput.addEventListener("input", applyPropertyFilters);
 }
+function applyPropertyFilters() {
+    const searchInput = document.querySelector("#property-search");
+    const typeFilter = document.querySelector("#property-type");
+    const priceFilter = document.querySelector("#max-price");
+    const noResults = document.querySelector("#no-results");
 
+    if (!searchInput || !typeFilter || !priceFilter) {
+        return;
+    }
+
+    const searchTerm = searchInput.value
+        .trim()
+        .toLowerCase();
+
+    const selectedType = typeFilter.value;
+
+    const maximumPrice = Number(priceFilter.value);
+
+    const filteredProperties = properties.filter(property => {
+        const matchesSearch =
+            property.title.toLowerCase().includes(searchTerm) ||
+            property.location.toLowerCase().includes(searchTerm) ||
+            property.type.toLowerCase().includes(searchTerm);
+
+        const matchesType =
+            selectedType === "" ||
+            property.type === selectedType;
+
+        const matchesPrice =
+            maximumPrice === 0 ||
+            property.price <= maximumPrice;
+
+        return matchesSearch &&
+            matchesType &&
+            matchesPrice;
+    });
+
+    displayProperties(filteredProperties);
+
+    if (noResults) {
+        noResults.hidden = filteredProperties.length !== 0;
+    }
+}
+function setupPropertyFilters() {
+    const typeFilter = document.querySelector("#property-type");
+    const priceFilter = document.querySelector("#max-price");
+
+    if (typeFilter) {
+        typeFilter.addEventListener(
+            "change",
+            applyPropertyFilters
+        );
+    }
+
+    if (priceFilter) {
+        priceFilter.addEventListener(
+            "change",
+            applyPropertyFilters
+        );
+    }
+}
 setupPropertySearch();
+setupPropertyFilters();
