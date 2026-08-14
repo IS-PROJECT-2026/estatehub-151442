@@ -566,3 +566,188 @@ body {
         gap: 20px;
     }
 }
+/* Responsive Improvements */
+
+@media (max-width: 1024px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 70px 5%;
+        gap: 45px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-visual {
+        min-height: 400px;
+    }
+
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .property-details-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .property-details-image img {
+        height: 450px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .nav-container {
+        position: relative;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-visual {
+        min-height: 320px;
+        padding: 20px;
+    }
+
+    .property-preview {
+        padding: 20px;
+    }
+
+    .preview-details {
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .page-header {
+        padding: 60px 20px;
+    }
+
+    .properties-section {
+        padding: 60px 20px;
+    }
+
+    .properties-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .property-card {
+        width: 100%;
+    }
+
+    .property-image {
+        height: 240px;
+    }
+
+    .property-details-page {
+        padding: 35px 20px 60px;
+    }
+
+    .property-details-image img {
+        height: 320px;
+    }
+
+    .details-price {
+        font-size: 1.7rem;
+    }
+
+    .details-features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        padding: 45px 18px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-tag,
+    .section-tag {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-actions {
+        gap: 12px;
+    }
+
+    .btn {
+        padding: 13px 18px;
+    }
+
+    .hero-visual {
+        min-height: 280px;
+        border-radius: 14px;
+    }
+
+    .property-preview h2 {
+        font-size: 1.2rem;
+    }
+
+    .preview-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-header h1 {
+        font-size: 2.3rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.6rem;
+    }
+
+    .property-content {
+        padding: 18px;
+    }
+
+    .property-details-image img {
+        height: 260px;
+    }
+
+    .property-details-info h1 {
+        font-size: 2rem;
+    }
+}
