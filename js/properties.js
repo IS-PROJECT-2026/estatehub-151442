@@ -72,3 +72,61 @@ const properties = [
             "An affordable apartment ideal for first-time homeowners or property investors."
     }
 ];
+
+function formatPrice(price) {
+    return new Intl.NumberFormat("en-KE", {
+        style: "currency",
+        currency: "KES",
+        maximumFractionDigits: 0
+    }).format(price);
+}
+
+function displayProperties() {
+    const container = document.querySelector("#properties-container");
+    const propertyCount = document.querySelector("#property-count");
+
+    if (!container) {
+        return;
+    }
+
+    container.innerHTML = properties.map(property => `
+        <article class="property-card">
+
+            <img
+                src="${property.image}"
+                alt="${property.title}"
+                class="property-image"
+            >
+
+            <div class="property-content">
+
+                <span class="property-type">
+                    ${property.type}
+                </span>
+
+                <h3>${property.title}</h3>
+
+                <p class="property-location">
+                    📍 ${property.location}
+                </p>
+
+                <div class="property-details">
+                    <span>🛏 ${property.bedrooms} Beds</span>
+                    <span>🛁 ${property.bathrooms} Baths</span>
+                </div>
+
+                <p class="property-price">
+                    ${formatPrice(property.price)}
+                </p>
+
+            </div>
+
+        </article>
+    `).join("");
+
+    if (propertyCount) {
+        propertyCount.textContent = properties.length;
+    }
+}
+
+displayProperties();
