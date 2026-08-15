@@ -8,8 +8,11 @@ function updateDashboardStatistics() {
     const totalApartments =
         document.querySelector("#total-apartments");
 
-    const totalOther =
-        document.querySelector("#total-other");
+    const totalLand =
+        document.querySelector("#total-land");
+
+    const totalCommercial =
+        document.querySelector("#total-commercial");
 
     if (!totalProperties) {
         return;
@@ -25,14 +28,18 @@ function updateDashboardStatistics() {
         property.type.toLowerCase() === "apartment"
     );
 
-    const otherProperties = properties.filter(property =>
-        property.type.toLowerCase() !== "house" &&
-        property.type.toLowerCase() !== "apartment"
+    const land = properties.filter(property =>
+        property.type.toLowerCase() === "land"
+    );
+
+    const commercial = properties.filter(property =>
+        property.type.toLowerCase() === "commercial"
     );
 
     totalHouses.textContent = houses.length;
     totalApartments.textContent = apartments.length;
-    totalOther.textContent = otherProperties.length;
+    totalLand.textContent = land.length;
+    totalCommercial.textContent = commercial.length;
 }
 
 
