@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EstateHub | Real Estate</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+                Estate<span>Hub</span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a href="index.html" >Home</a>
+                <a href="properties.html">Properties</a>
+                <a href="favourites.html">Favourites</a>
+                <a href="admin.html" class="active">Admin</a>
+            </nav>
+
+        </div>
+    </header>
+
+<main>
+
+        <section class="page-hero">
+            <div class="container">
+                <h1>Admin Dashboard</h1>
+                <p>
+                    Manage property listings and view EstateHub statistics.
+                </p>
+            </div>
+        </section>
+
+        <section class="admin-dashboard">
+            <div class="container">
+
+                <div class="dashboard-header">
+                    <div>
+                        <h2>Dashboard Overview</h2>
+                        <p>
+                            Monitor your property listings from one place.
+                        </p>
+                    </div>
+
+                    <a
+                        href="#property-management"
+                        class="btn"
+                    >
+                        Manage Properties
+                    </a>
+                </div>
+
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+                        <h3 id="total-properties">0</h3>
+                        <p>Total Properties</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3 id="total-houses">0</h3>
+                        <p>Houses</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3 id="total-apartments">0</h3>
+                        <p>Apartments</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3 id="total-other">0</h3>
+                        <p>Other Properties</p>
+                    </article>
+
+                </div>
+
+                <section
+                    id="property-management"
+                    class="admin-properties"
+                >
+                    <div class="section-heading">
+                        <h2>Property Listings</h2>
+                        <p>
+                            View the properties currently available
+                            in EstateHub.
+                        </p>
+                    </div>
+
+                    <div
+                        id="admin-properties-container"
+                        class="admin-properties-grid"
+                    >
+                    </div>
+
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+    <script src="js/app.js"></script>
+        <script src="js/properties.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+</html>
