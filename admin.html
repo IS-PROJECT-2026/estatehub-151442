@@ -89,7 +89,163 @@
                     </article>
 
                 </div>
+                <section class="property-submission">
+    <div class="container">
 
+        <div class="section-heading">
+            <h2>Add New Property</h2>
+            <p>
+                Enter the details below to create a new property listing.
+            </p>
+        </div>
+
+        <form id="property-form" class="property-form">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="property-title">
+                        Property Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="property-title"
+                        name="title"
+                        placeholder="e.g. Modern Family Home"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="property-location">
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="property-location"
+                        name="location"
+                        placeholder="e.g. Nairobi"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="property-type-input">
+                        Property Type
+                    </label>
+
+                    <select
+                        id="property-type-input"
+                        name="type"
+                        required
+                    >
+                        <option value="">
+                            Select property type
+                        </option>
+
+                        <option value="House">
+                            House
+                        </option>
+
+                        <option value="Apartment">
+                            Apartment
+                        </option>
+
+                        <option value="Land">
+                            Land
+                        </option>
+
+                        <option value="Commercial">
+                            Commercial
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="property-price">
+                        Price (KSh)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="property-price"
+                        name="price"
+                        placeholder="e.g. 15000000"
+                        min="1"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="property-bedrooms">
+                        Bedrooms
+                    </label>
+
+                    <input
+                        type="number"
+                        id="property-bedrooms"
+                        name="bedrooms"
+                        placeholder="e.g. 3"
+                        min="0"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="property-bathrooms">
+                        Bathrooms
+                    </label>
+
+                    <input
+                        type="number"
+                        id="property-bathrooms"
+                        name="bathrooms"
+                        placeholder="e.g. 2"
+                        min="0"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="property-image">
+                    Property Image URL
+                </label>
+
+                <input
+                    type="url"
+                    id="property-image"
+                    name="image"
+                    placeholder="https://example.com/property.jpg"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="property-description">
+                    Property Description
+                </label>
+
+                <textarea
+                    id="property-description"
+                    name="description"
+                    rows="5"
+                    placeholder="Describe the property..."
+                    required
+                ></textarea>
+            </div>
+
+            <button type="submit" class="btn">
+                Add Property
+            </button>
+
+        </form>
+
+    </div>
+</section>
                 <section
                     id="property-management"
                     class="admin-properties"

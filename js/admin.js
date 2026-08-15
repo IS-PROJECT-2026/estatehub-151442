@@ -85,4 +85,27 @@ function displayAdminProperties() {
 document.addEventListener("DOMContentLoaded", () => {
     updateDashboardStatistics();
     displayAdminProperties();
+    setupPropertyForm();
 });
+function setupPropertyForm() {
+    const propertyForm =
+        document.querySelector("#property-form");
+
+    if (!propertyForm) {
+        return;
+    }
+
+    propertyForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        if (!propertyForm.checkValidity()) {
+            propertyForm.reportValidity();
+            return;
+        }
+
+        alert(
+            "Property details validated successfully. " +
+            "Property creation will be implemented next."
+        );
+    });
+}

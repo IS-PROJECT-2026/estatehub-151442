@@ -988,3 +988,67 @@ body {
     display: block;
     margin-bottom: 18px;
 }
+/* Property Submission Form */
+
+.property-submission {
+    padding: 70px 0;
+}
+
+.property-form {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+@media (max-width: 600px) {
+    .property-form {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
