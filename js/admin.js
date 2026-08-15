@@ -103,9 +103,60 @@ function setupPropertyForm() {
             return;
         }
 
-        alert(
-            "Property details validated successfully. " +
-            "Property creation will be implemented next."
-        );
+        const newProperty = {
+            id: Date.now(),
+
+            title: document.querySelector(
+                "#property-title"
+            ).value.trim(),
+
+            location: document.querySelector(
+                "#property-location"
+            ).value.trim(),
+
+            type: document.querySelector(
+                "#property-type-input"
+            ).value,
+
+            price: Number(
+                document.querySelector(
+                    "#property-price"
+                ).value
+            ),
+
+            bedrooms: Number(
+                document.querySelector(
+                    "#property-bedrooms"
+                ).value
+            ),
+
+            bathrooms: Number(
+                document.querySelector(
+                    "#property-bathrooms"
+                ).value
+            ),
+
+            image: document.querySelector(
+                "#property-image"
+            ).value.trim(),
+
+            description: document.querySelector(
+                "#property-description"
+            ).value.trim(),
+
+            isCustom: true
+        };
+
+        properties.push(newProperty);
+
+        saveCustomProperties();
+
+        propertyForm.reset();
+
+        displayAdminProperties();
+
+        updateDashboardStatistics();
+
+        alert("Property added successfully.");
     });
 }
