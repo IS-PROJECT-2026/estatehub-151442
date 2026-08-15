@@ -72,7 +72,34 @@ const properties = [
             "An affordable apartment ideal for first-time homeowners or property investors."
     }
 ];
-let favourites = [];
+function loadFavourites() {
+    try {
+        const savedFavourites =
+            localStorage.getItem("estatehub-favourites");
+
+        if (!savedFavourites) {
+            return [];
+        }
+
+        const parsedFavourites =
+            JSON.parse(savedFavourites);
+
+        if (!Array.isArray(parsedFavourites)) {
+            return [];
+        }
+
+        return parsedFavourites;
+    } catch (error) {
+        return [];
+    }
+}
+let favourites = loadFavourites();
+function saveFavourites() {
+    localStorage.setItem(
+        "estatehub-favourites",
+        JSON.stringify(favourites)
+    );
+}
 function formatPrice(price) {
     return new Intl.NumberFormat("en-KE", {
         style: "currency",
@@ -338,7 +365,7 @@ function toggleFavourite(propertyId) {
         favourites.splice(propertyIndex, 1);
     }
 
-    displayProperties();
+    saveFavourites();
     applyPropertyFilters();
 }
 function setupFavouriteButtons() {
