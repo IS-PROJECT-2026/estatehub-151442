@@ -72,7 +72,7 @@ const properties = [
             "An affordable apartment ideal for first-time homeowners or property investors."
     }
 ];
-
+let favourites = [];
 function formatPrice(price) {
     return new Intl.NumberFormat("en-KE", {
         style: "currency",
@@ -122,7 +122,13 @@ function displayProperties(propertyList = properties) {
     <a href="property-details.html?id=${property.id}" class="property-details-btn">
         View Details
     </a>
-
+        <button
+    class="favourite-btn ${favourites.includes(property.id) ? "is-favourite" : ""}"
+    data-id="${property.id}"
+    aria-label="Toggle favourite for ${property.title}"
+>
+    ${favourites.includes(property.id) ? "♥ Saved" : "♡ Favourite"}
+</button>
 </div>
 
         </article>
@@ -131,6 +137,7 @@ function displayProperties(propertyList = properties) {
     if (propertyCount) {
         propertyCount.textContent = propertyList.length;
     }
+    setupFavouriteButtons();
 }
 
 displayProperties();
@@ -321,6 +328,29 @@ function setupPropertyFilters() {
             applyPropertyFilters
         );
     }
+}
+function toggleFavourite(propertyId) {
+    const propertyIndex = favourites.indexOf(propertyId);
+
+    if (propertyIndex === -1) {
+        favourites.push(propertyId);
+    } else {
+        favourites.splice(propertyIndex, 1);
+    }
+
+    displayProperties();
+    applyPropertyFilters();
+}
+function setupFavouriteButtons() {
+    const favouriteButtons = document.querySelectorAll(".favourite-btn");
+
+    favouriteButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const propertyId = Number(button.dataset.id);
+
+            toggleFavourite(propertyId);
+        });
+    });
 }
 setupPropertySearch();
 setupPropertyFilters();
