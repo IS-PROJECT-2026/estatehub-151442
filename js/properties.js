@@ -1,4 +1,4 @@
-const properties = [
+let properties = [
     {
         id: 1,
         title: "Modern Family Home",
@@ -71,6 +71,51 @@ const properties = [
         description:
             "An affordable apartment ideal for first-time homeowners or property investors."
     }
+];
+function loadCustomProperties() {
+    try {
+        const savedProperties =
+            localStorage.getItem("estatehub-properties");
+
+        if (!savedProperties) {
+            return [];
+        }
+
+        const parsedProperties =
+            JSON.parse(savedProperties);
+
+        return Array.isArray(parsedProperties)
+            ? parsedProperties
+            : [];
+    } catch (error) {
+        return [];
+    }
+}
+
+
+function saveCustomProperties() {
+    const originalProperties = properties.filter(
+        property => !property.isCustom
+    );
+
+    const customProperties = properties.filter(
+        property => property.isCustom
+    );
+
+    localStorage.setItem(
+        "estatehub-properties",
+        JSON.stringify(customProperties)
+    );
+
+    return originalProperties;
+}
+
+
+const customProperties = loadCustomProperties();
+
+properties = [
+    ...properties,
+    ...customProperties
 ];
 function loadFavourites() {
     try {
