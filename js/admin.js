@@ -68,20 +68,75 @@ function displayAdminProperties() {
                     KSh ${property.price.toLocaleString()}
                 </strong>
 
-                <a
-                    href="property-details.html?id=${property.id}"
-                    class="btn property-btn"
+                <div class="admin-property-actions">
+    <a
+        href="property-details.html?id=${property.id}"
+        class="btn property-btn"
+    >
+        View Property
+    </a>
+
+     ${
+        property.isCustom
+            ? `
+                <button
+                    class="delete-property-btn"
+                    data-id="${property.id}"
                 >
-                    View Property
-                </a>
+                    Delete
+                </button>
+            `
+            : ""
+    }
+</div>
 
             </div>
 
         </article>
     `).join("");
+    setupDeleteButtons();
 }
 
+function setupDeleteButtons() {
+    const deleteButtons =
+        document.querySelectorAll(".delete-property-btn");
 
+    deleteButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const propertyId =
+                Number(button.dataset.id);
+
+            const property = properties.find(
+                property => property.id === propertyId
+            );
+
+            if (!property) {
+                return;
+            }
+
+            const confirmed = confirm(
+                `Are you sure you want to delete "${property.title}"?`
+            );
+
+            if (!confirmed) {
+                return;
+            }
+
+            const propertyIndex = properties.findIndex(
+                property => property.id === propertyId
+            );
+
+            properties.splice(propertyIndex, 1);
+
+            saveCustomProperties();
+
+            displayAdminProperties();
+            updateDashboardStatistics();
+
+            alert("Property deleted successfully.");
+        });
+    });
+}
 document.addEventListener("DOMContentLoaded", () => {
     updateDashboardStatistics();
     displayAdminProperties();

@@ -1052,3 +1052,29 @@ body {
         grid-template-columns: 1fr;
     }
 }
+.admin-property-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.delete-property-btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+}
+
+@media (max-width: 600px) {
+    .admin-property-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-property-actions .btn,
+    .delete-property-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
