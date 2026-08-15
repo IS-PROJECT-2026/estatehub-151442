@@ -90,16 +90,28 @@
     </div>
 
     <div class="filter-group">
-        <label for="max-price">Maximum Price</label>
+    <label for="min-price">Minimum Price</label>
 
-        <select id="max-price">
-            <option value="">Any Price</option>
-            <option value="10000000">Up to KSh 10M</option>
-            <option value="20000000">Up to KSh 20M</option>
-            <option value="30000000">Up to KSh 30M</option>
-            <option value="50000000">Up to KSh 50M</option>
-        </select>
-    </div>
+    <select id="min-price">
+        <option value="">No Minimum</option>
+        <option value="5000000">KSh 5M+</option>
+        <option value="10000000">KSh 10M+</option>
+        <option value="20000000">KSh 20M+</option>
+        <option value="30000000">KSh 30M+</option>
+    </select>
+</div>
+
+<div class="filter-group">
+    <label for="max-price">Maximum Price</label>
+
+    <select id="max-price">
+        <option value="">No Maximum</option>
+        <option value="10000000">Up to KSh 10M</option>
+        <option value="20000000">Up to KSh 20M</option>
+        <option value="30000000">Up to KSh 30M</option>
+        <option value="50000000">Up to KSh 50M</option>
+    </select>
+</div>
 
 </div>
 <p id="no-results" class="no-results" hidden>
