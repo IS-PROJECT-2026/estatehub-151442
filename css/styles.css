@@ -891,3 +891,21 @@ body {
     border-color: #ef4444;
     color: #ffffff;
 }
+/* Favourites Page */
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    border: 1px dashed #d1d5db;
+    border-radius: 12px;
+}
+
+.empty-state h2 {
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    max-width: 500px;
+    margin: 0 auto 24px;
+    color: #6b7280;
+}
