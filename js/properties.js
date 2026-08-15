@@ -242,10 +242,16 @@ function setupPropertySearch() {
 function applyPropertyFilters() {
     const searchInput = document.querySelector("#property-search");
     const typeFilter = document.querySelector("#property-type");
-    const priceFilter = document.querySelector("#max-price");
+    const minPriceFilter = document.querySelector("#min-price");
+    const maxPriceFilter = document.querySelector("#max-price");
     const noResults = document.querySelector("#no-results");
 
-    if (!searchInput || !typeFilter || !priceFilter) {
+    if (
+        !searchInput ||
+        !typeFilter ||
+        !minPriceFilter ||
+        !maxPriceFilter
+    ) {
         return;
     }
 
@@ -255,7 +261,8 @@ function applyPropertyFilters() {
 
     const selectedType = typeFilter.value;
 
-    const maximumPrice = Number(priceFilter.value);
+    const minimumPrice = Number(minPriceFilter.value);
+    const maximumPrice = Number(maxPriceFilter.value);
 
     const filteredProperties = properties.filter(property => {
         const matchesSearch =
@@ -267,13 +274,20 @@ function applyPropertyFilters() {
             selectedType === "" ||
             property.type === selectedType;
 
-        const matchesPrice =
+        const matchesMinimumPrice =
+            minimumPrice === 0 ||
+            property.price >= minimumPrice;
+
+        const matchesMaximumPrice =
             maximumPrice === 0 ||
             property.price <= maximumPrice;
 
-        return matchesSearch &&
+        return (
+            matchesSearch &&
             matchesType &&
-            matchesPrice;
+            matchesMinimumPrice &&
+            matchesMaximumPrice
+        );
     });
 
     displayProperties(filteredProperties);
@@ -284,7 +298,8 @@ function applyPropertyFilters() {
 }
 function setupPropertyFilters() {
     const typeFilter = document.querySelector("#property-type");
-    const priceFilter = document.querySelector("#max-price");
+    const minPriceFilter = document.querySelector("#min-price");
+    const maxPriceFilter = document.querySelector("#max-price");
 
     if (typeFilter) {
         typeFilter.addEventListener(
@@ -293,8 +308,15 @@ function setupPropertyFilters() {
         );
     }
 
-    if (priceFilter) {
-        priceFilter.addEventListener(
+    if (minPriceFilter) {
+        minPriceFilter.addEventListener(
+            "change",
+            applyPropertyFilters
+        );
+    }
+
+    if (maxPriceFilter) {
+        maxPriceFilter.addEventListener(
             "change",
             applyPropertyFilters
         );
