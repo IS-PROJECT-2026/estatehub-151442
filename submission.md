@@ -70,51 +70,65 @@
 
 > This section will be completed using genuine merge conflict evidence created during Issue #23.
 
+## 5. Merge Conflict Evidence
+
 ### Conflict 1 — Full Chronology
 
-**What cause did you use?** [To be completed during Issue #23]
+**What cause did you use?**
+
+Both branches modified the same line in `conflict-demo.txt` differently.
 
 #### Step 1: Generating the Clash
 
-[PASTE SCREENSHOT OF ATTEMPTED MERGE / TERMINAL WARNING HERE]
+The branch `feat/23-merge-conflict-evidence` changed the file to:
 
-* **Caption:** [To be completed after generating Conflict 1]
+```text
+EstateHub modern property listing and management system
+
+**Evidence:**  
+[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_1.png)
+
+* **Caption:** [Git detected a content conflict because both branches modified the same line differently.]
 
 #### Step 2: Inside the Code Editor (Conflict Markers)
 
-[PASTE SCREENSHOT OF RAW CONFLICT MARKERS HERE]
+**Evidence:**  
+[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_1.png)
 
-* **Caption:** [To be completed after resolving Conflict 1]
+* **Caption:** [The file contained Git conflict markers showing the two competing versions:]
 
 #### Step 3: Resolution & Clean Merge
 
-[PASTE SCREENSHOT OF CLEAN RESOLUTION HERE]
+**Evidence:**  
+[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_1.png)
 
-* **Caption:** [To be completed after Conflict 1 is resolved and merged]
+* **Caption:** [The resolved file was staged and committed successfully.]
 
 ---
 
 ### Conflict 2 — Different Cause
 
-**What cause did you use?** [To be completed during Issue #23]
+**What cause did you use?** [One branch deleted conflict-delete-demo.txt, while another branch modified the same file.]
 
-**Why does this cause trigger a conflict?** [To be completed based on the conflict scenario used]
+**Why does this cause trigger a conflict?** [Git cannot automatically determine whether the file should remain deleted or whether the modified version should be restored.]
 
-[PASTE SCREENSHOT OF CONFLICT MARKERS FOR CONFLICT 2 HERE]
+**Evidence:**  
+[View Conflict 2 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_2.png)
 
-* **Caption:** [To be completed after generating Conflict 2]
+* **Caption:** [Git detected a modify/delete conflict because HEAD deleted the file while conflict/23-modify-file modified it.]
 
 ---
 
 ### Conflict 3 — Different Cause
 
-**What cause did you use?** [To be completed during Issue #23]
+**What cause did you use?** [Both branches independently created a new file named conflict-add-demo.txt with different contents.]
 
-**Why does this cause trigger a conflict?** [To be completed based on the conflict scenario used]
+**Why does this cause trigger a conflict?** [Git cannot automatically choose which independently created version of the same file should be kept.]
 
-[PASTE SCREENSHOT OF CONFLICT MARKERS FOR CONFLICT 3 HERE]
+**Evidence:**  
+[View Conflict 3 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_3.png)
 
-* **Caption:** [To be completed after generating Conflict 3]
+* **Caption:** [Git detected an add/add conflict because both branches added conflict-add-demo.txt with different content.]
 
 ---
 
