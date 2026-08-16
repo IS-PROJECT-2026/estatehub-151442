@@ -1,1 +1,5 @@
-EstateHub modern property listing and management system
+<<<<<<< HEAD
+EstateHub property listing and management platform
+=======
+EstateHub property listing and management platform
+>>>>>>> conflict/23-version-a
