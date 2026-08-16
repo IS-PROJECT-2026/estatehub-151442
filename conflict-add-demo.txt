@@ -1,1 +1,5 @@
-﻿Version created from the evidence branch.
+<<<<<<< HEAD
+Version created and resolved from both branches for conflict demonstration.
+=======
+Version created and resolved from both branches for conflict demonstration.
+>>>>>>> conflict/23-add-add
