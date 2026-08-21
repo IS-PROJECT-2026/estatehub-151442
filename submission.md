@@ -98,7 +98,7 @@ EstateHub modern property listing and management system
 #### Step 3: Resolution & Clean Merge
 
 **Evidence:**  
-[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_1.png)
+[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/tree/main/evidence/conflict_evidence_1.png)
 
 * **Caption:** [The resolved file was staged and committed successfully.]
 
@@ -111,7 +111,7 @@ EstateHub modern property listing and management system
 **Why does this cause trigger a conflict?** [Git cannot automatically determine whether the file should remain deleted or whether the modified version should be restored.]
 
 **Evidence:**  
-[View Conflict 2 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_2.png)
+[View Conflict 2 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/tree/main/evidence/conflict_evidence_2.png)
 
 * **Caption:** [Git detected a modify/delete conflict because HEAD deleted the file while conflict/23-modify-file modified it.]
 
@@ -124,7 +124,7 @@ EstateHub modern property listing and management system
 **Why does this cause trigger a conflict?** [Git cannot automatically choose which independently created version of the same file should be kept.]
 
 **Evidence:**  
-[View Conflict 3 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_3.png)
+[View Conflict 3 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/tree/main/evidence/conflict_evidence_3.png)
 
 * **Caption:** [Git detected an add/add conflict because both branches added conflict-add-demo.txt with different content.]
 
