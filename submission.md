@@ -81,7 +81,6 @@
 
 The branch `feat/23-merge-conflict-evidence` changed the file to:
 
-```text
 EstateHub modern property listing and management system
 
 **Evidence:**  
@@ -131,16 +130,3 @@ EstateHub modern property listing and management system
 
 ---
 
-## 6. Feedback & Evaluation
-
-To help improve this course for future engineering cohorts, please take 2 minutes to fill out the anonymous feedback form. Your honest review helps shape how this program is taught next semester!
-
-- [ ] **Anonymous Evaluation Form:** [Course & Instructor Evaluation](https://forms.gle/YLybnsyXXErKEg3s9)
-
----
-
-## Final Submission
-
-Once your repository is complete, submit your work through the official submission form below.
-
-> **Submission Form:** https://forms.gle/KrT4VxtFtkU3wtYu8
