@@ -84,14 +84,14 @@ The branch `feat/23-merge-conflict-evidence` changed the file to:
 EstateHub modern property listing and management system
 
 **Evidence:**  
-[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_1.png)
+[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/tree/main/evidence/conflict_evidence_1.png)
 
 * **Caption:** [Git detected a content conflict because both branches modified the same line differently.]
 
 #### Step 2: Inside the Code Editor (Conflict Markers)
 
 **Evidence:**  
-[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/blob/feat/23-merge-conflict-evidence/evidence/conflict_evidence_1.png)
+[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/tree/main/evidence/conflict_evidence_1.png)
 
 * **Caption:** [The file contained Git conflict markers showing the two competing versions:]
 
