@@ -92,14 +92,14 @@ EstateHub modern property listing and management system
 #### Step 2: Inside the Code Editor (Conflict Markers)
 
 **Evidence:**  
-[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/tree/main/evidence/conflict_evidence_1.png)
+[View Conflict 1 Evidence](![alt text](evidence/conflict_evidence_1.png))
 
 * **Caption:** [The file contained Git conflict markers showing the two competing versions:]
 
 #### Step 3: Resolution & Clean Merge
 
 **Evidence:**  
-[View Conflict 1 Evidence](https://github.com/IS-PROJECT-2026/estatehub-151442/tree/main/evidence/conflict_evidence_1.png)
+[View Conflict 1 Evidence](![alt text](evidence/conflict_evidence_1.png))
 
 * **Caption:** [The resolved file was staged and committed successfully.]
 
