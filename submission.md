@@ -42,33 +42,32 @@
 
 ### A. Milestones and Issues
 
-[PASTE YOUR MILESTONE SCREENSHOT DIRECTLY HERE]
-
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
 * **Caption:** The project is organized into three milestones covering the foundation and property catalogue, search and favourites functionality, and property management and deployment, with individual development issues assigned to each milestone.
 
 ### B. Project Board
 
-[PASTE YOUR PROJECT BOARD SCREENSHOT DIRECTLY HERE]
+![alt text](image-4.png)
 
 * **Caption:** The GitHub Project Board tracks the EstateHub development workflow using To Do, In Progress, and Done columns, allowing issues to move through the development lifecycle.
 
 ### C. Branching Architecture
 
-[PASTE YOUR BRANCHING SCREENSHOT DIRECTLY HERE]
+![alt text](image-5.png)
 
 * **Caption:** The branch list demonstrates issue-linked branch naming using prefixes such as `feat/`, `style/`, and `docs/`, with development work separated from the protected `main` branch.
 
 ### D. Pull Requests & Traceability
 
-[PASTE YOUR PULL REQUEST SCREENSHOT DIRECTLY HERE]
+![alt text](image-6.png)
 
 * **Caption:** This Pull Request demonstrates traceability between a feature branch, its implementation changes, and the GitHub Issue that is automatically closed when the Pull Request is merged.
 
 ---
 
-## 5. Merge Conflict Evidence
-
-> This section will be completed using genuine merge conflict evidence created during Issue #23.
 
 ## 5. Merge Conflict Evidence
 
@@ -76,7 +75,7 @@
 
 **What cause did you use?**
 
-Both branches modified the same line in `conflict-demo.txt` differently.
+### Both branches modified the same line in `conflict-demo.txt` differently.
 
 #### Step 1: Generating the Clash
 
